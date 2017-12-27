@@ -11,3 +11,6 @@ git reset --hard 7edb8524a 回退版本
 合并某分支到当前分支：git merge <name>
 
 删除分支：git branch -d <name>
+
+测试 firstbranch 
+测试 firstbranch 2
