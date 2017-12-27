@@ -1,0 +1,4 @@
+
+_.extend();
+_.extend()方法是Underscore.js库提供的一个方法，作用是将sources对象中的所有属性拷贝到destination对象中，并返回destination对象。
+_.extend(destination, *sources) 

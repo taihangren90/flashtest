@@ -1,0 +1,162 @@
+ 
+//公共样式
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+    body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+    h1, h2, h3, h4, h5, h6{ font-size:100%; }
+    address, cite, dfn, em, var { font-style:normal; }
+    code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+    small{ font-size:12px; }
+    ul, ol { list-style:none; }
+    a { text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    sup { vertical-align:text-top; }
+    sub{ vertical-align:text-bottom; }
+    legend { color:#000; }
+    fieldset, img { border:0; }
+    button, input, select, textarea { font-size:100%; }
+    table { border-collapse:collapse; border-spacing:0; } 
+
+//全屏加滤镜
+.cover {
+    
+position: absolute;
+
+left: 0;right: 0;top: 0;bottom: 0;
+    
+background-color: #fff;
+   
+ opacity: 0.5;filter: alpha(opacity=50);
+
+}
+
+
+
+
+//清除浮动
+.clearfix:after {
+   
+ clear: both;
+   
+ content: ".";   //你头可以改成其他任意文本如“abc”
+  
+ display: block;
+   
+ height: 0;      //高度为0且hidden让该文本彻底隐藏
+  
+ visibility: hidden;
+
+}
+
+.clearfix {
+   //兼容IE6浏览器
+ *zoom: 1;
+
+}
+
+
+
+
+//{font:12px/1.5tahoma, arial, \5b8b\4f53; }
+{
+font:12px;
+line-height:1.5;
+font-family:Tahoma,arial,\5b8b\4f53;
+}
+
+///width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width 可以确保它能正确呈现在不同设备上。
+initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。
+在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。
+通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。这样禁用缩放功能后，用户只能滚动屏幕，就能让您的网站看上去更像原生应用的感觉。
+
+<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+
+
+//js事件封装
+var event = {  
+    //添加句柄  添加事件  
+    addHandler:function(element,type,handler){  
+        //ele 元素  
+        //type 事件类型  
+        //handler 处理事件的函数程序  
+        if (element.addEventListener) {  
+            element.addEventListener(type,handler,false);  
+        }else if (element.attachEvent) {  
+            element.attachEvent('on'+type,handler);  
+        }else{  
+            element['on'+type]=handler;  
+        }  
+    },  
+    //删除句柄  删除事件  
+    removeHandler:function(element,type,handler){  
+        if (element.removeEventListener) {  
+            element.removeEventListener(type,handler,false);  
+        }else if (element.detachEvent) {  
+            element.detachEvent('on'+type,handler);  
+        }else{  
+            element['on'+type] = null;  
+        }  
+    },  
+    //兼容event  
+    getEvent:function(event){  
+        return event?event:window.event;  
+    },  
+    //获取事件类型  
+    getType:function(event){  
+        return event.type;      //不存在浏览器兼容的问题  
+    },  
+    //获取事件目标  
+    getElement:function(event){  
+        return event.target || event.srcElement;  
+    },  
+    //阻止事件冒泡  
+    preventDefault:function(event){  
+        if(event.preventDefault){  
+            event.preventDefault();  
+        }else{  
+            event.returnValue = false;  
+        }  
+    },  
+    //阻止事件的默认行为  
+    stopPropagation:function(event){  
+        if (event.stopPropagation) {  
+            event.stopPropagation();  
+        }else{  
+            event.cancleBubble = true;  
+        }  
+    }  
+}
+
+//js封装className获取元素
+function getByClass(className,parent){  
+    //className 类名  必须  
+    //parent父元素   可选  
+    //对父元素进行处理  
+    var oParent = parent ? document.getElementById(parent):document,  
+    eles = [],  
+    elements = oParent.getElementsByTagName('*');  
+    for(var i = 0 , l = elements.length ; i < l ; i ++){  
+        if(elements[i].className == className){  
+            eles.push(elements[i]);  
+        }  
+    }  
+    return eles;  
+}  
+
+//通用模块的定义；
+ if (typeof define === 'function' && define.amd) {
+    define(function() {
+      return Uri;
+    });
+  } else if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = Uri;
+  } else {
+    global.Uri = Uri;
+  }
+
+
+
+
+

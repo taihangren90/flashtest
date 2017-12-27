@@ -1,0 +1,14 @@
+核心思想是前端html页面通过ajax调用后端的restuful api接口并使用json数据进行交互。
+
+大中型公司需要专业人才，小公司需要全才，但是对于个人职业发展来说，我建议是分开。
+
+对于后端java工程师：
+把精力放在java基础，设计模式，jvm原理，spring+springmvc原理及源码，linux，mysql事务隔离与锁机制，mongodb，http/tcp，
+多线程，分布式架构（dubbo，dubbox，spring cloud），弹性计算架构，微服务架构（springboot+zookeeper+docker+jenkins），
+java性能优化，以及相关的项目管理等等。
+后端追求的是：三高（高并发，高可用，高性能），安全，存储，业务等等。
+
+对于前端工程师：
+把精力放在html5，css3，jquery，angularjs，bootstrap，reactjs，vuejs，webpack，less/sass，gulp，nodejs，Google V8引擎，
+javascript多线程，模块化，面向切面编程，设计模式，浏览器兼容性，性能优化等等。
+前端追求的是：页面表现，速度流畅，兼容性，用户体验等等。

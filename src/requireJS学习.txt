@@ -1,0 +1,16 @@
+
+如果是否支持require.js;
+if (typeof define === "function" && define.amd) {
+    define("YYTPlayer", [], function () {
+        return YYTPlayer;
+    });
+} else {
+    if (!this.YYTPlayer) {
+        this.YYTPlayer = YYTPlayer;
+    }
+}
+
+命名空间 把变量和函数限制在某个特定的作用域内。
+
+1:define
+2:

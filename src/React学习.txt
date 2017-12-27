@@ -1,0 +1,44 @@
+数据驱动 VS 事件驱动
+
+参数传递：
+this.props 外部传参
+state 内部
+this.setState({});每次更新触发render()
+
+生命周期
+getInitialState(){return {};} 返回一个对象
+getDefaultProps(){return {};} 返回一个对象
+componentDidMount(){} dom挂载以后执行初始化
+componentWillUnmount(){} 组件从dom中移除
+
+获取真实dom节点
+dom节点上定义ref属性 然后通过refs获取
+<div ref="progress"></div>   获取 this.refs.progres
+
+组件通信
+1：从父组件传到子组件 this.props
+2：子组件传到父组件 回调函数
+3：发布订阅模式 pubsub.js库
+
+React-router路由
+1:hashHistory
+2:history
+
+IndexRoute
+Router
+<Link to=""></Link>
+
+immutable-js
+Redux
+当页面渲染完，UI就出现了，然后用户触发UI上的Action，然后Action被送到Reducer这个方法里去，
+然后Reducer更新了Store，Store里包含react开发的State，最后State决定UI层的展现。
+
+Virtual DOM
+DOM diff 对比两个Virtual DOM的差异，更新有必要的DOM
+
+数据流框架；
+所有的组件状态就像一棵树一样；
+
+
+
+

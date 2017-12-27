@@ -1,0 +1,16 @@
+xss攻击方式 跨站脚本攻击
+
+反射型；1：XSS代码出现在URL 2：服务器解析XSS代码，返回浏览器执行；
+存储型： 提交的xss存储在服务器
+
+
+XSS的防御措施；
+编码：对用户输入的内容html Entity编码
+过滤：1:移除用户上传DOM属性，如onerror,onclick.....
+      2:移除用户上传style节点、script节点、iframe节点；
+校正：1：避免直接对html Entity解码
+      2：使用DOM Parse转化
+
+
+<img src="null" alt="" onerror="alert(1)" />
+<style>body{ display:none !important} </style>
